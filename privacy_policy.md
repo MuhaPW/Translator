@@ -1,4 +1,4 @@
-## <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">политика конфиденциальности</font></font>
+## <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Политика конфиденциальности</font></font>
 
 <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мухтар создал бесплатное приложение Разговорный переводчик.</font> <font style="vertical-align: inherit;">Данная УСЛУГА предоставляется Mukhtar бесплатно и предназначена для использования как есть.</font></font>
 
