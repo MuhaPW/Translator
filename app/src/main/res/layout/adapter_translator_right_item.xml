@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/from_text"
+        style="@style/TranslatorAdapterItem"
+        android:background="@drawable/background_translator_right_item"/>
+
+    <TextView
+        android:id="@+id/to_text"
+        style="@style/TranslatorAdapterItem"
+        android:background="@drawable/background_translator_right_item"
+        android:backgroundTint="@color/translator_left_user"/>
+</LinearLayout>

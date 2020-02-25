@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="70dp"
+        android:clipToPadding="false"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/layout_language_selected"/>
+
+    <LinearLayout
+        android:id="@+id/layout_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/left_language"
+            layout="@layout/adapter_language_left"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_settings"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <include
+            android:id="@+id/right_language"
+            layout="@layout/adapter_language_right"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/translated_text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        android:visibility="invisible"
+        android:layout_below="@id/layout_language">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/translated_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_large"
+                android:ellipsize="end"
+                android:maxLines="6"
+                android:textAlignment="center"
+                android:layout_margin="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/layout_language_selected"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_above="@id/action_layout">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/translator_left_user"
+            android:layout_weight="1"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/translator_right_user"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/left_voice"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/TranslatorActionBtn"
+            android:src="@mipmap/ic_voice" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/left_edit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/TranslatorActionBtn"
+            android:src="@mipmap/ic_edit" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/right_edit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/TranslatorActionBtn"
+            android:src="@mipmap/ic_edit" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/right_voice"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/TranslatorActionBtn"
+            android:src="@mipmap/ic_voice" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/action_layout"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:visibility="invisible">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/back"
+            style="@style/TranslatorActionBtn"
+            android:src="@mipmap/ic_back_language" />
+
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="@string/translated_edit_hint"
+            android:layout_weight="1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_text_send"
+            style="@style/TranslatorActionBtn"
+            android:src="@mipmap/ic_check" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/translator_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_translator_hint"
+        android:text="@string/translated_hint"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"
+        android:layout_margin="50dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/action_layout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Разговорный переводчик</string>
+    <string name="example_text">Example text</string>
+
+    <string name="translated_text">Переводимый текст</string>
+    <string name="translated_edit_hint">Введите текст на одном из выбранных языков</string>
+    <string name="translated_hint">Выберите два языка которых хотите использовать.
+        \n Напишите текст или нажмите на кнопку голоса и говорите.</string>
+    <string name="you_have_chosen_this_language">Вы уже выбрали этот язык</string>
+    <string name="not_connect">Нету соеденеие с сервером. Проверьте подключение к интернету.</string>
+    <string name="error">Ошибка</string>
+</resources>
